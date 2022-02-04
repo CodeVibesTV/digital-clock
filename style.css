@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredericka+the+Great&display=swap');
+
+:root{
+  --background-color-set:#FFA078,#FFFE5C,#FF601C,#6AFFEB,#B573FF;
+  --font-family-set: 'Fredericka the Great','Bebas Neue',cursive;
+}
+/* Reset browser preset*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  min-width: 600px;
+  overflow: hidden;
+  font-family: var(--font-family-set);
+}
+.container{
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(rgba(5,5,5,0.6),rgba(5,5,5,0.9));
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 200%;
+  animation: animation-bg 15s ease-in-out infinite alternate;
+}
+.clock{
+  width:50vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:10%;
+}
+.clock span{
+  font-size:1.5rem;
+  color:rgba(255,255,255,0.4);
+  margin-left:10px;
+}
+.clock p{
+  font-size: 6rem;
+  color:rgba(255,255,255,0.1);
+  background:linear-gradient(90deg,var(--background-color-set));
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 200%;
+  animation: animation-bg 4s ease-in-out infinite alternate;
+}
+.clock div{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.toogle-button{
+  position:absolute;
+  top:5%;
+  left:5%;
+  display: grid;
+  justify-content: flex-start;
+  align-items: center;
+  gap:10%;
+  outline:none;
+  border:none;
+  padding: 5px 20px;
+  font-family: var(--font-family-set);
+  border-radius: 30px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor:pointer;
+}
+.toogle-button span{
+  font-size:1.5rem;
+  color:rgba(255,255,255,0.6);
+}
+.toogle-button p{
+  color:transparent;
+  font-size:1.5rem;
+  background:linear-gradient(to right,var(--background-color-set));
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: animation-bg 4s ease-in-out infinite alternate;
+}
+
+
+/* Animations */
+@keyframes animation-bg{
+  0%{
+    background-position: center left;
+  }
+  100%{
+    background-position: center right;
+  }
+}
